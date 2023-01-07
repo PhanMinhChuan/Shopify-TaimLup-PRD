@@ -57,7 +57,7 @@ body {
 }
 
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Quicksand';
   color: #757575;
   font-size: 15px;
 }
@@ -3144,7 +3144,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   border-bottom: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .custom-menu__item {

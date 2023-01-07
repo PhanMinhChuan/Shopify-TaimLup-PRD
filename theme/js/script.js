@@ -80,10 +80,6 @@
 			}
 		});
 
-    $('#dropdown-item').click(function(){
-      $('.dropdown-item__custom').toggleClass('active');
-      $('.custom-menu__li').toggleClass('active');
-    });
 
   });
   
