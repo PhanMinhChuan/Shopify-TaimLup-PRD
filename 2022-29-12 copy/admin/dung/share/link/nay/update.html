@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Taim Lup | Vintage</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <!-- Themefisher Icon font  enctype="multipart/form-data"-->
+  <link rel="stylesheet" href="style.css?version=149">
+</head>
+
+  <body id="body">
+		<div class="form-group">
+			<label class="label">Loại sản phẩm: </label>
+			<select id="type" name="type">
+				<option value="ao">áo</option>
+				<option value="quan">quần</option>
+				<option value="giay">giày</option>
+				<option value="phukien">phụ kiện</option>
+			</select>
+		</div>
+	
+		<div class="form-group">
+			<label class="label">Tên sản phẩm (*): </label>
+			<input id="name" type="text" name="name" placeholder="VD: VINTAGE 1993 LEVIS '501' BUTTON FLY" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">Hình sản phẩm (*) (Chọn 7 hình trở xuống): </label>
+			<input id="chuan" type="file" multiple name="image" accept="image/*" class="form-control-file" onchange="addImage()">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">size sản phẩm (*): </label>
+			<input id="size" type="text" name="size" placeholder="VD: L/XL/XXL, 30, 31, 32,..." class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">size mẫu: </label>
+			<input id="size_model" type="text" name="size_model" placeholder="VD: 1m84-60kg" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">độ dài: </label>
+			<input id="size_length" type="text" name="size_length" placeholder="VD: 59cm" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">size eo: </label>
+			<input id="size_waist" type="text" name="size_waist" placeholder="VD: 61cm" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">độ dài ống quần: </label>
+			<input id="size_leg" type="text" name="size_leg"  placeholder="VD: 61cm" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">Độ mới: </label>
+			<input id="condition_percent" type="text" name="size_leg"  placeholder="VD: 80-85%" class="custom-caption">
+		</div>
+	
+		<div class="form-group">
+			<label class="label">Tên hãng: </label>
+			<input id="trademark" type="text" name="trademark" placeholder="VD: 485" class="custom-caption">
+		</div>
+		
+		<div class="form-group">
+			<label class="label">Giá (*): </label>
+			<input id="price" type="text" name="price" placeholder="VD: 750,000" class="custom-caption">
+		</div>
+
+		<br>
+		<button type="submit" class="custom_add btn btn-primary" onclick="addProduct(event)">Cập nhập sản phẩm</button>
+    
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="update.js"></script>
+	
+  </body>
+</html>

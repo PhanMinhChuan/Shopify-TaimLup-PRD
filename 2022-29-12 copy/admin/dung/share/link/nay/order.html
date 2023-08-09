@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý</title>
+    <link rel="stylesheet" href="style.css?version=149">
+</head>
+<body>
+    <header>
+		<div class="logo">Trang quản lý</div>
+	</header>
+	<div class="nav-btn">Menu</div>
+	<div class="container">
+		
+		<div class="sidebar">
+			<nav>
+				<a href="#">Trang quản lý</a>
+				<ul>
+					<li class="active"><a href="order">Đơn hàng</a></li>
+					<li><a href="product">Sản phẩm</a></li>
+					<li><a href="discount">Mã giảm giá</a></li>
+				</ul>
+			</nav>
+		</div>
+
+        <div class="main-content" id="product">
+			<h1>Đơn hàng</h1>
+			<p>Xem và xóa đơn hàng ở đây!</p>
+            <br>
+			<a href='order_trash' style='color: black; border: 1px solid black; padding: 4px; font-size: 16px; margin-top: 10px;'>ĐƠN HÀNG ĐÃ SHIP</a>
+
+            <br>
+            <br>
+            <table id="listOrder">
+            </table>
+			<br>
+            <br>
+			<br>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="order.js?version=149"></script>
+	<script>
+		//reload cache
+		if (window.localStorage.getItem('order_refresh') != '?version=149'){
+			window.location.reload();
+			window.localStorage.setItem('order_refresh', '?version=149');
+		}
+	</script>
+</body>
+</html>

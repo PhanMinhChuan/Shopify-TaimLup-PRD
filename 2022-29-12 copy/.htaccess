@@ -1,0 +1,4 @@
+RewriteEngine ON
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+Rewriterule product/([0-9a-zA-Z]+)$ /product.html?id_blogs=$1

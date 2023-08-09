@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Taim Lup | Vintage</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <!-- Themefisher Icon font  enctype="multipart/form-data"-->
+  <link rel="stylesheet" href="style.css?version=149">
+</head>
+
+  <body id="body">
+	<div class="form-group">
+		<label class="label">Loại sản phẩm: </label>
+		<select id="type" name="type" onchange="enableByType()">
+			<option value="freeship">Free ship</option>
+			<option value="money">Giảm tiền VND theo giá sản phẩm</option>
+			<option value="percent">Giảm % theo giá giảm sản phẩm</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Ngày bắt đầu (*): </label>
+		<input id="start_date" type="datetime-local" name="start_date" class="custom-caption">
+	</div>
+
+	<div class="form-group">
+		<label class="label">Ngày kết thúc (*): </label>
+		<input id="end_date" type="datetime-local" name="end_date" class="form-control-file">
+	</div>
+
+	<div class="form-group">
+		<label class="label">Mã code (*): </label>
+		<input id="code" type="text" name="code" placeholder="VD: VINTAGE2023" class="custom-caption">
+	</div>
+
+	<div class="form-group" style="display: none;" id="check_discount_price">
+		<label class="label">Số tiền giảm trên tổng giá sản phẩm (VND): </label>
+		<input id="discount_price" type="text" name="discount_price" placeholder="VD: 20,000" class="custom-caption">
+	</div>
+
+	<div class="form-group" style="display: none;"  id="check_discount_percent">
+		<label class="label">Số phần trăm giảm trên tổng giá sản phẩm (%): </label>
+		<input id="discount_percent" type="text" name="discount_percent" placeholder="VD: 10" class="custom-caption">
+	</div>
+
+	<br>
+	<button type="submit" class="btn btn-primary custom_add" onclick="addDiscount(event)">Thêm mã giảm giá</button>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="discount_update.js?version=149"></script>
+	<script>
+		function enableByType() {
+			var type = document.getElementById("type").value;
+			if (type == 'money') {
+				document.getElementById("check_discount_price").style.display = '';
+				document.getElementById("check_discount_percent").style.display = 'none';
+			} else if (type == 'percent') {
+				document.getElementById("check_discount_price").style.display = 'none';
+				document.getElementById("check_discount_percent").style.display = '';
+			} else {
+				document.getElementById("check_discount_price").style.display = 'none';
+				document.getElementById("check_discount_percent").style.display = 'none';
+			}
+		}
+	</script>
+	<script>
+		//reload cache
+		if (window.localStorage.getItem('discount_update_refresh') != '?version=149'){
+			window.location.reload();
+			window.localStorage.setItem('discount_update_refresh', '?version=149');
+		}
+	</script>
+	
+  </body>
+</html>

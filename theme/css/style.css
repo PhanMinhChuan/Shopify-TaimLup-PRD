@@ -3037,7 +3037,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   pointer-events: none;
   max-height: 280px;
   overflow-y: auto;
-  background-color: #ffffff;
+  background-color: #ececec;
   border-radius : 0 0 5px 5px;
   position: absolute;
   width: 100%;

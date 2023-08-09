@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý</title>
+    <link rel="stylesheet" href="style.css?version=149">
+</head>
+<body>
+    <header>
+		<div class="logo">Trang quản lý</div>
+	</header>
+	<div class="nav-btn">Menu</div>
+	<div class="container">
+		
+		<div class="sidebar">
+			<nav>
+				<a href="#">Trang quản lý</a>
+				<ul>
+					<li><a href="order">Đơn hàng</a></li>
+					<li class="active"><a href="product">Sản phẩm</a></li>
+					<li><a href="discount">Mã giảm giá</a></li>
+				</ul>
+			</nav>
+		</div>
+
+        <div class="main-content" id="product">
+			<h1>Sản phẩm</h1>
+			<p>Danh sách sản phẩm đang được đặt ở đây!</p>
+            <br>
+            <br>
+            <table id="listproducttrash">
+            </table>
+			<br>
+            <br>
+			<br>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="product_trash.js?version=149"></script>
+	<script>
+		//reload cache
+		if (window.localStorage.getItem('product_trash_refresh') != '?version=149'){
+			window.location.reload();
+			window.localStorage.setItem('product_trash_refresh', '?version=149');
+		}
+	</script>
+</body>
+</html>
