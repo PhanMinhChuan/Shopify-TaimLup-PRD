@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Taim Lup | Vintage</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <!-- Themefisher Icon font  enctype="multipart/form-data"-->
+  <link rel="stylesheet" href="style.css?version=149">
+</head>
+
+  <body id="body">
+
+	<div class="form-group">
+		<label class="label">Ngày mua: 　　　</label>
+		<span id="date"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Tên người đặt: 　　　</label>
+		<span id="name"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Số điện thoại: 　　　</label>
+		<span id="phone"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Địa chỉ: 　　　</label>
+		<span id="address"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Tỉnh thành phố: 　　　</label>
+		<span id="address_detail"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Ghi chú: 　　　</label>
+		<span id="note"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Cách thanh toán: 　　　</label>
+		<span id="type"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Danh sách sản phẩm: 　　　</label>
+		<br>
+		<span id="list_product_by_order"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Giá chưa giảm: 　　　</label>
+		<span id="price"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Đã áp dụng voucher: 　　　</label>
+		<span id="voucher"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="label">Giá cuối cùng: 　　　</label>
+		<span id="price_discount"></span>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="order_view.js?version=149"></script>
+	<script>
+		//reload cache
+		if (window.localStorage.getItem('order_view_refresh') != '?version=149'){
+			window.location.reload();
+			window.localStorage.setItem('order_view_refresh', '?version=149');
+		}
+	</script>
+  </body>
+</html>

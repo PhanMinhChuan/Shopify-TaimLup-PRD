@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý</title>
+    <link rel="stylesheet" href="style.css?version=149">
+</head>
+<body>
+    <header>
+		<div class="logo">Trang quản lý</div>
+	</header>
+	<div class="nav-btn">Menu</div>
+	<div class="container">
+		
+		<div class="sidebar">
+			<nav>
+				<a href="#">Trang quản lý</a>
+				<ul>
+					<li><a href="order">Đơn hàng</a></li>
+					<li><a href="product">Sản phẩm</a></li>
+					<li class="active"><a href="discount">Mã giảm giá</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="main-content" id="discount">
+			<h1>Mã giảm giá</h1>
+			<p>Thêm sửa xóa mã giảm giá ở đây!</p>
+
+            <br>
+            <a href='discount_create' style='color: black; border: 1px solid black; padding: 4px; font-size: 16px; margin-top: 10px;'>THÊM MÃ GIẢM GIÁ MỚI</a>
+            <br>
+            <br>
+            <table id="listDiscount">
+            </table>
+			<br>
+            <br>
+			<br>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="discount.js?version=149"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+	<script>
+		//reload cache
+		if (window.localStorage.getItem('discount_refresh') != '?version=149'){
+			window.location.reload();
+			window.localStorage.setItem('discount_refresh', '?version=149');
+		}
+	</script>
+    
+</body>
+</html>
