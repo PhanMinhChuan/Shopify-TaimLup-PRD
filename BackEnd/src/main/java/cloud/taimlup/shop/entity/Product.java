@@ -20,6 +20,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "attribute")
+    private String attribute;
+
     @Column(name = "type")
     private String type;
 
@@ -64,7 +67,7 @@ public class Product {
     @Column(name= "reduced_price")
     private String reduced_price;
 
-    public Product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price) {
+    public Product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price, String attribute) {
         this.type = type;
         this.type_detail = type_detail;
         this.name = name;
@@ -77,9 +80,10 @@ public class Product {
         this.trademark = trademark;
         this.price = price;
         this.wait_buy = 0;
+        this.attribute = attribute;
     }
 
-    public Product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price, String reduced_price) {
+    public Product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price, String reduced_price, String attribute) {
         this.type = type;
         this.type_detail = type_detail;
         this.name = name;
@@ -93,5 +97,6 @@ public class Product {
         this.price = price;
         this.wait_buy = 0;
         this.reduced_price = reduced_price;
+        this.attribute = attribute;
     }
 }

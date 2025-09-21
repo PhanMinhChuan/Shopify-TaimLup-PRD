@@ -17,6 +17,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query(value = "SELECT * FROM product ORDER BY RAND()", nativeQuery = true)
     List<Product> findAllRandom(Pageable pageable);
+    
+    @Query(value = "SELECT * FROM product WHERE attribute = 'used' ORDER BY RAND()", nativeQuery = true)
+    List<Product> findAllSecondHandRandom(Pageable pageable);
+    
+    @Query(value = "SELECT * FROM product WHERE attribute = 'merchandise' ORDER BY RAND()", nativeQuery = true)
+    List<Product> findAllMerchandiseRandom(Pageable pageable);
 
     @Query(value = "SELECT * FROM product WHERE wait_buy = 0 ORDER BY ID DESC", nativeQuery = true)
     List<Product> findAllByWaitBuy(Pageable pageable);

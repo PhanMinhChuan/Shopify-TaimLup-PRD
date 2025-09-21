@@ -1,7 +1,6 @@
 package cloud.taimlup.shop;
 
 import cloud.taimlup.shop.entity.Product;
-import cloud.taimlup.shop.repository.ProductRepository;
 import cloud.taimlup.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

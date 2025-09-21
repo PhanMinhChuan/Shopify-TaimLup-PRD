@@ -1,0 +1,8 @@
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/repository/ImageRepository.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/service/ProductService.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/entity/Image.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/Main.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/controller/ProductController.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/entity/Product.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/service/impl/ProductServiceImpl.java
+/home/springboot/Taimlup/src/main/java/cloud/taimlup/shop/repository/ProductRepository.java

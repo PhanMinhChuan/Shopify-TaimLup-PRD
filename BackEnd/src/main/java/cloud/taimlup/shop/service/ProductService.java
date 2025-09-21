@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface ProductService {
 
-    public void create_product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price);
+    public void create_product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price, String attribute);
 
     public void create_products (List<Product> products);
 

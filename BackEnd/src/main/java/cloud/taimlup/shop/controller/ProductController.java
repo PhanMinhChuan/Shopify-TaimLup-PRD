@@ -69,6 +69,43 @@ public class ProductController {
         return productRepository.findAllRandom(pageable);
     }
 
+    @GetMapping("/products/secondhand/random")
+    @CrossOrigin
+    public List<Product> secondhand_random(@RequestParam(value="page", defaultValue = Const.NUMBER_PAGE_START_DEFAULT) Integer page,
+                                  @RequestParam(value="size", defaultValue = Const.NUMBER_SIZE_PAGE_DEFAULT) Integer size) {
+        try {
+            if (page == 0) {
+                Optional<CountView> countView = countViewRepository.findById(1L);
+                int count = countView.get().getCount_view_web() + 1;
+                countView.get().setCount_view_web(count);
+                countViewRepository.save(countView.get());
+            }
+        } catch (Exception e) {
+        }
+
+        Pageable pageable = PageRequest.of(page, size);
+        return productRepository.findAllSecondHandRandom(pageable);
+    }
+
+
+    @GetMapping("/products/merchandise/random")
+    @CrossOrigin
+    public List<Product> merchandise_random(@RequestParam(value="page", defaultValue = Const.NUMBER_PAGE_START_DEFAULT) Integer page,
+                                  @RequestParam(value="size", defaultValue = Const.NUMBER_SIZE_PAGE_DEFAULT) Integer size) {
+        try {
+            if (page == 0) {
+                Optional<CountView> countView = countViewRepository.findById(1L);
+                int count = countView.get().getCount_view_web() + 1;
+                countView.get().setCount_view_web(count);
+                countViewRepository.save(countView.get());
+            }
+        } catch (Exception e) {
+        }
+
+        Pageable pageable = PageRequest.of(page, size);
+        return productRepository.findAllMerchandiseRandom(pageable);
+    }
+
     @RequestMapping(value = "/product/list", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     @CrossOrigin
     public List<Product> products_list(@RequestBody Order order) {
@@ -329,13 +366,13 @@ public class ProductController {
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @CrossOrigin
     @Transactional
-    public String product_upload(@RequestPart(value = "image") MultipartFile[] file, @RequestParam("type") String type, @RequestParam("type_detail") String type_detail,
+    public String product_upload(@RequestPart(value = "image") MultipartFile[] file, @RequestParam("attribute") String attribute, @RequestParam("type") String type, @RequestParam("type_detail") String type_detail,
                                  @RequestParam("name") String name, @RequestParam("size") String size, @RequestParam("size_model") String size_model,
                                  @RequestParam("size_length") String size_length, @RequestParam("size_waist") String size_waist, @RequestParam("size_leg") String size_leg,
                                  @RequestParam("condition_percent") String condition_percent, @RequestParam("trademark") String trademark, @RequestParam("price") String price) throws IOException {
         String UPLOAD_DIRECTORY = "/var/www/html/images/shop/products_test";
         ArrayList<Image> images = new ArrayList<>();
-        Product product = new Product(type, type_detail, name, size, size_model, size_length, size_waist, size_leg, condition_percent, trademark, price);
+        Product product = new Product(type, type_detail, name, size, size_model, size_length, size_waist, size_leg, condition_percent, trademark, price, attribute);
         productRepository.save(product);
 
         long products_size = productRepository.findIdMax();
@@ -361,7 +398,7 @@ public class ProductController {
     @PostMapping("/product/update/{id}")
     @CrossOrigin
     @Transactional
-    public String product_update(@PathVariable long id, @RequestPart(value = "image") MultipartFile[] file, @RequestParam("type") String type, @RequestParam("type_detail") String type_detail,
+    public String product_update(@PathVariable long id, @RequestPart(value = "image") MultipartFile[] file, @RequestParam("attribute") String attribute, @RequestParam("type") String type, @RequestParam("type_detail") String type_detail,
                                  @RequestParam("name") String name, @RequestParam("size") String size, @RequestParam("size_model") String size_model,
                                  @RequestParam("size_length") String size_length, @RequestParam("size_waist") String size_waist, @RequestParam("size_leg") String size_leg,
                                  @RequestParam("condition_percent") String condition_percent, @RequestParam("trademark") String trademark, @RequestParam("price") String price, @RequestParam("reduced_price") String reduced_price) throws IOException {
@@ -390,6 +427,7 @@ public class ProductController {
             }
             product.setImages(images);
         }
+        product.setAttribute(attribute);
         product.setType(type);
         product.setType_detail(type_detail);
         product.setName(name);

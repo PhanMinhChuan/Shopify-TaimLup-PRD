@@ -93,6 +93,7 @@ function addProduct(e) {
         count++;
     }
     if (count == 0) {
+        product.append('attribute', document.getElementById("attribute").value);
         product.append('type', document.getElementById("type").value);
         product.append('name', document.getElementById("name").value);
         product.append('size', document.getElementById("size").value);

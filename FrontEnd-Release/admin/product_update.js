@@ -4,6 +4,7 @@ $(document).ready(function() {
     fetch("https://taimlup.com:8443/vintage/product/" + id).then(
         (response) => response.json().then((data) => {
             if (data != null) {
+                document.getElementById("attribute").value = data.attribute;
                 document.getElementById("type").value = data.type;
                 document.getElementById("name").value = data.name;
                 document.getElementById("size").value = data.size;
@@ -52,6 +53,7 @@ function addProduct(e) {
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
 
+    product.append('attribute', document.getElementById("attribute").value);
     product.append('type', document.getElementById("type").value);
     product.append('name', document.getElementById("name").value);
     product.append('size', document.getElementById("size").value);

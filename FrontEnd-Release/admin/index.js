@@ -50,6 +50,7 @@ function addImage() {
 }
 
 function addProduct(e) {
+    product.append('attribute', document.getElementById("attribute").value);
     product.append('type', document.getElementById("type").value);
     product.append('name', document.getElementById("name").value);
     product.append('size', document.getElementById("size").value);

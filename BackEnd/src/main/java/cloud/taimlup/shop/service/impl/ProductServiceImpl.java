@@ -16,8 +16,8 @@ public class ProductServiceImpl implements ProductService {
     ProductRepository productRepository;
 
     @Override
-    public void create_product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price) {
-        Product product = new Product(type, type_detail, name, size, size_model, size_length, size_waist, size_leg, condition_percent, trademark, price);
+    public void create_product(String type, String type_detail, String name, String size, String size_model, String size_length, String size_waist, String size_leg, String condition_percent, String trademark, String price, String attribute) {
+        Product product = new Product(type, type_detail, name, size, size_model, size_length, size_waist, size_leg, condition_percent, trademark, price, attribute);
         productRepository.save(product);
     }
 

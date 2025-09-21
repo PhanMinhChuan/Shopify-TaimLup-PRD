@@ -33,7 +33,6 @@ public class ProductOrder {
     @JsonBackReference
     private Order order;
 
-
     @Column(name = "price")
     private String price;
 
